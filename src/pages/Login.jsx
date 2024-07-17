@@ -118,14 +118,14 @@ const handleSignup = async (e) => {
 
   const formData = new FormData();
   formData.append("name", name.value);
-  formData.append("email", email.value);
+  // formData.append("email", email.value);
   formData.append("bio", bio.value);
   formData.append("username", username.value);
   formData.append("password", password.value);
   formData.append("avatar", avatar.file);
 
   try {
-    const response = await fetch(`${server}/api/v1/user/signup`, {
+    const response = await fetch(`${server}/api/v1/user/new`, {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -156,7 +156,7 @@ const handleLogin = async (e) => {
   setIsLoading(true);
 
   const requestBody = {
-    email: email.value,
+    username: username.value,
     password: password.value,
   };
 
@@ -220,12 +220,12 @@ const handleLogin = async (e) => {
               <TextField
                 required
                 fullWidth
-                label="E-mail"
+                label="Username"
                 margin="normal"
                 variant="outlined"
-                value={email.value}
-                onChange={email.changeHandler}
-                type="email"
+                value={username.value}
+                onChange={username.changeHandler}
+              
               />
               <TextField
                 required
