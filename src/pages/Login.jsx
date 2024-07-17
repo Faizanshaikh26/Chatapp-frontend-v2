@@ -125,7 +125,7 @@ const handleSignup = async (e) => {
   formData.append("avatar", avatar.file);
 
   try {
-    const response = await fetch(`${server}/api/v1/user/new`, {
+    const response = await fetch(`${server}/api/v1/user/signup`, {
       method: 'POST',
       credentials: 'include',
       headers: {
