@@ -18,7 +18,7 @@ function Search() {
   const [initialUsers, setInitialUsers] = useState([]);
 
   const addFriendHandler = async (id) => {
-   await sendFriendRequest("Sending friend request",{receiverId:id})
+   await sendFriendRequest("Sending friend request",{userId:id})
     
   };
   
